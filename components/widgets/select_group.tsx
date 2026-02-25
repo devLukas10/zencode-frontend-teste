@@ -110,7 +110,7 @@ function Custom({placeholder, onChange, className}: selectTypes){
                         }}
                     >
                         <span className={`text-[11pt] text-gray-600`}>
-                            English
+                        Português
                         </span>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ import { APP_ROUTE_NAMES } from "@/constants/app_route_name";
 
 
 function RenderDropmenu({data, show}:{data?: UserTypes, show?: boolean}) {
-    const [_btnState, setBtnState] = useState<ButtonGroupType>({loading: false, disabled: true});
+    const [_btnState, setBtnState] = useState<ButtonGroupType>({loading: false, disabled: false});
     
 
 
@@ -86,7 +86,7 @@ export const HeaderComponent = ()=> {
 
             {/** PAGE TRANSLATE BUTTON */}
             <SelectGroup.Custom
-                className="w-[110px] h-[40px] pl-2 pr-2 pt-1 bg-blue-50 rounded-md "
+                className="w-[120px] h-[42px] pl-2 pr-2 pt-1 bg-blue-50 rounded-md "
                 onChange={(e)=> console.log(e)}
                 placeholder={'Português'}
             />
