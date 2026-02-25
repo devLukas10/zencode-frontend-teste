@@ -49,19 +49,6 @@ export const CadidatePersonalDataForm = ({show, next, cb}: CandidateFormTypes)=>
     if (!show) return <div className='hidden' />
 
     return <div className="w-full flex flex-col h-[200px] mt-[20px]">
-        <label htmlFor="input-avatar" className="m-0 mb-[35px] w-[100px] h-[100px]">
-            <div className="w-[100px] h-[100px] rounded-full border border-gray-200 cursor-pointer flex items-center justify-center"
-                style={{
-                    backgroundImage: `url(${_fileView})`,
-                    backgroundPosition: 'center',
-                    backgroundSize:'cover',
-                    backgroundRepeat: 'no-repeat'
-                }}
-            >
-                {!_fileView ? <LuUser size={40} color='gray' /> : ''}                
-            </div>
-        </label>
-        
         <form onSubmit={(e)=> submit(e)}
             className={`w-full flex flex-col h-[200px] gap-2`}
         >

@@ -7,6 +7,7 @@ import { CadidatePersonalDataForm } from "@/components/forms/candidate_personal_
 import { CadidatePorfolioAndLinkInfoForm } from "@/components/forms/candidate_portfolio_and_link_info_form";
 import { CadidateProfissionaInfoForm } from "@/components/forms/candidate_profissional_info_form";
 import { ModalCenterSheet } from "@/components/widgets/modal_center_sheet";
+import { CANDIDATE_FORM_TITLE } from "@/constants/app_contexts";
 import { useState } from "react";
 
 export default function NewCandidatePage() {
@@ -15,7 +16,7 @@ export default function NewCandidatePage() {
     const [_currentData, setCurrentData] = useState<any>();
 
     return <ModalCenterSheet
-            title="Personal Information"
+            title={CANDIDATE_FORM_TITLE[_currentStep - 1]}
             leadChild={<CandidateFormGroup.Step value={_currentStep} />}
             show={true}
             onDismiss={()=> { history.back(); }}

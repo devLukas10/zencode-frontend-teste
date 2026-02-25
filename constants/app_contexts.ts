@@ -40,3 +40,10 @@ export const CANDIDATE_FORM_CONTETX_LABELS = {
     lab22: 'Excluir',
     lab21: 'Salvar e Atualizar',
 }
+
+export const CANDIDATE_FORM_TITLE = [
+    "Informações Pessoal",
+    "Informações Profissional",
+    "Experiência",
+    "Links e Portfólio"
+]
