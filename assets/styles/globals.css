@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --background: #efedfd;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+*{
+  outline: none;
+}
+button{ cursor: pointer;}
+
+
+/** grid-layout **/
+.grid-layout{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 90px 1fr;
+}
+
+/*** grid-layout-02 **/
+.sub-header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+/*** layout-cotainer **/
+.layout-container{
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+/*** wrap-container ***/
+.wrap-container{
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: max-content;
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+  justify-content: start;
+}
+
+/**** sheet-modal ***/
+.sheet-modal{
+  background-color: #00000049;
+  backdrop-filter: blur(5px);
+  left: 0;
+  bottom: 0;
+  z-index: 500;
+  transition: ease-in linear .5s;
+}
+.sheet-modal-container{
+  display: grid;
+  grid-template-rows: 45px 1fr;
+  max-height: 90vh;
+}
+/*** log-bg **/
+.log-bg{
+  backdrop-filter: blur(10px);
+}
+
+
+.load-button{ 
+  animation:  load-button linear infinite .7s;
+  border: 2px solid transparent;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+@keyframes load-button {
+  from {rotate: 0deg;}
+  to {rotate: 360deg;}
+}
