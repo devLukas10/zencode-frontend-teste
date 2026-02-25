@@ -88,7 +88,7 @@ export const HeaderComponent = ()=> {
             <SelectGroup.Custom
                 className="w-[110px] h-[40px] pl-2 pr-2 pt-1 bg-blue-50 rounded-md "
                 onChange={(e)=> console.log(e)}
-                placeholder={'English'}
+                placeholder={'Português'}
             />
 
             <button className="p-3 rounded-md bg-blue-50 hover:bg-blue-50 cursor-pointer ">

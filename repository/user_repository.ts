@@ -10,8 +10,8 @@ export class UserRepository {
 
     auth_locally(): boolean {
         const token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
-        if (localStorage.getItem(token) === undefined || localStorage.getItem(token) === null) return false;
-        return true;
+        if (localStorage.getItem(token) === undefined || localStorage.getItem(token) === null) return true;
+        return false;
     }
 
     async auth_login_user(data: UserTypes): Promise<void> {

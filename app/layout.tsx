@@ -7,11 +7,10 @@ import { SelectGroup } from "@/components/widgets/select_group";
 import { CandidateLayoutWrap } from "@/components/layouts/candidate_wrap_layout";
 import { AuthLoginLayout } from "@/components/layouts/auth_login_layout";
 import { UserRepository } from "@/repository/user_repository";
+import { useState, useEffect } from "react";
+import { LoadingPageModal } from "@/components/widgets/loading_page_modal";
 
 import "../assets/styles/globals.css";
-import { useState, useEffect } from "react";
-
-
 
 
 const userRepo = new UserRepository();
@@ -22,15 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogout, setIsLout] = useState<boolean>(false);
 
   useEffect(()=> {
-    setIsLogin(userRepo.auth_locally());
-  }, [isLogin]);
+    setIsLout(userRepo.auth_locally());
+  }, [isLogout]);
 
   
   
-  if (!isLogin) return (
+  if (isLogout) return (
     <html lang="pt">
       <body>
         <AuthLoginLayout />;
@@ -43,6 +42,10 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body>
+        {/*** *LoadingPageModal  */}
+        
+        <LoadingPageModal />
+
         <div className="grid-layout">
             {/**** HEADERS */}
           <div className="sub-header gap-6">
