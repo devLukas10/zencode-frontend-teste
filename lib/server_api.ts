@@ -7,7 +7,7 @@ const axio = axios.create({baseURL: uri});
 export class ServerApi {
 
     async GET(path: string): Promise<any> {
-        const token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
+        const token = localStorage.getItem(process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string)
         console.log(token)
         return (await axio.get(path, {
             headers: {Authorization: `Bearer ${token}`}
@@ -15,7 +15,7 @@ export class ServerApi {
     }
 
     async POST(path: string, data: any): Promise<any> {
-        const token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
+        const token = localStorage.getItem(process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string)
         return (await axio.post(path, data, {
             headers: {Authorization: `Bearer ${token}`}
         })).data;
