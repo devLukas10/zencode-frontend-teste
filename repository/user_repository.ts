@@ -7,17 +7,18 @@ import { UserTypes } from "@/types/user_types";
 
 export class UserRepository {
     private api = new ServerApi();
-    private token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
 
     auth_locally(): boolean {
-        if (localStorage.getItem(this.token) === undefined || localStorage.getItem(this.token) === null) return false;
+        const token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
+        if (localStorage.getItem(token) === undefined || localStorage.getItem(token) === null) return false;
         return true;
     }
 
     async auth_login_user(data: UserTypes): Promise<void> {
+        const token = process.env.NEXT_PUBLIC_LOCAL_TOKEN_KEY as string;
         const response = await this.api.POST(ROUTE_NAMES.auth_login_user, data);
         
-        localStorage.setItem(this.token, response);
+        localStorage.setItem(token, response);
         setTimeout(()=>{ location.reload(); }, 1500);
     }
 

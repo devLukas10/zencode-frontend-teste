@@ -5,6 +5,10 @@ import { FirebaseService } from "@/services/firebase.service";
 import { useState } from "react";
 import { AlertModalGroup, AlertModalType } from "@/components/widgets/alert_modal_group";
 import { AUTH_LOGIN_CONTEXT_LABELS } from "@/constants/app_contexts";
+import { APP_CONFIG } from "@/constants/app_config";
+import Image from "next/image";
+
+
 
 const service = new FirebaseService();
 
@@ -48,7 +52,12 @@ export function AuthLoginLayout(){
         {/**** */}
         <div className="w-full max-w-[450px] m-2 flex flex-col gap-4 rounded-md p-8 bg-white min-h-[470px] shadow-md">
             <div className="flex items-center w-full gap-10">
-                <span>logo</span>
+                <Image
+                    src={APP_CONFIG.icons[0]}
+                    alt={APP_CONFIG.display_name}
+                    width={50}
+                    height={50}
+                />
                 <div className="h-[100px] w-[2px] bg-gray-200 rounded-md "></div>
                 <div className="flex flex-col justify-center h-[100px] gap-1">
                     <span className="text-gray-500">{AUTH_LOGIN_CONTEXT_LABELS.lab1}</span>

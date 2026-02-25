@@ -1,25 +1,36 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client"
 import { HeaderComponent } from "@/components/headers/header_component";
 import { ButtonGroup } from "@/components/widgets/button_group";
 import { SearchBar } from "@/components/widgets/search_bar";
 import { SelectGroup } from "@/components/widgets/select_group";
-import { CandidateLayoutWrap } from "@/components/layouts/candidate_layout_wrap";
+import { CandidateLayoutWrap } from "@/components/layouts/candidate_wrap_layout";
 import { AuthLoginLayout } from "@/components/layouts/auth_login_layout";
 import { UserRepository } from "@/repository/user_repository";
 
 import "../assets/styles/globals.css";
+import { useState, useEffect } from "react";
 
 
+
+
+const userRepo = new UserRepository();
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const userRepo = new UserRepository();
   
-  if (!userRepo.auth_locally()) return (
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+
+  useEffect(()=> {
+    setIsLogin(userRepo.auth_locally());
+  }, [isLogin]);
+
+  
+  
+  if (!isLogin) return (
     <html lang="pt">
       <body>
         <AuthLoginLayout />;
