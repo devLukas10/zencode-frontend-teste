@@ -1,7 +1,3 @@
-Perfeito 💛 com esses `.env` podemos criar um README **completo para o frontend**, incluindo **configuração do Firebase, backend e uso de token**. Aqui está um modelo pronto:
-
----
-
 # Zencode Talently – Frontend
 
 ## 🔧 Configuração do Projeto
@@ -30,8 +26,6 @@ NEXT_PUBLIC_SERVER_WEB_URL=https://zentcode-backend-test.onrender.com
 NEXT_PUBLIC_LOCAL_TOKEN_KEY=a74229b67ad223332cb231
 NEXT_PUBLIC_LOCAL_TEMPORAL_UID=67ad223332cb23189865898
 ```
-
-> ⚠️ Nunca coloque `.env.local` no GitHub.
 
 ---
 
